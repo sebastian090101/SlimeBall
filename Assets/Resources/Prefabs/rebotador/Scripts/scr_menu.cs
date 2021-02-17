@@ -5,11 +5,21 @@ using UnityEngine.EventSystems;
 
 public class scr_menu : MonoBehaviour, IPointerClickHandler
 {
+    public bool girar;
     float velocity = -25;
-    // Update is called once per frame
+
+    private void Start()
+    {
+        girar = false;
+    }
+
     void Update()
     {
-        transform.RotateAround(transform.position, Vector3.back, velocity * Time.deltaTime);
+        if( girar)
+        {
+            transform.RotateAround(transform.position, Vector3.back, velocity * Time.deltaTime);
+        }
+        
     }
 
     public void OnPointerClick(PointerEventData eventData)

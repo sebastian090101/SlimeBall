@@ -19,16 +19,16 @@ public class Botones_Rebote : MonoBehaviour, IPointerClickHandler
         switch (num)
         {
             case 1:
-                objeto(Resources.Load<GameObject>("Prefabs/rebotador/Prefabs_Reb/rebotador1"));
+                objeto(Resources.Load<GameObject>("Prefabs/rebotador/Prefabs_Reb/circulo"));
                 break;
             case 2:
-                objeto(Resources.Load<GameObject>("Prefabs/rebotador/Prefabs_Reb/rebotador2"));
+                objeto(Resources.Load<GameObject>("Prefabs/rebotador/Prefabs_Reb/cuadrado"));
                 break;
             case 3:
-                objeto(Resources.Load<GameObject>("Prefabs/rebotador/Prefabs_Reb/rebotador3"));
+                objeto(Resources.Load<GameObject>("Prefabs/rebotador/Prefabs_Reb/triangulo"));
                 break;
             case 4:
-                objeto(Resources.Load<GameObject>("Prefabs/rebotador/Prefabs_Reb/rebotador4"));
+                objeto(Resources.Load<GameObject>("Prefabs/rebotador/Prefabs_Reb/pentagono"));
                 break;
             default:
                 break;
