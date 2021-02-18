@@ -7,6 +7,7 @@ public class scr_menu_pause : MonoBehaviour
 {
     public void reiniciar()
     {
+        
         SceneManager.LoadScene("SampleScene");
         Time.timeScale = 1;
     }

@@ -69,9 +69,11 @@
     <Compile Include="Assets\Resources\Prefabs\Fondo\Scripts\Instaciar_MR.cs" />
     <Compile Include="Assets\Resources\Prefabs\Lanzador\Prefab_Player\Scripts\scr_player.cs" />
     <Compile Include="Assets\Resources\Prefabs\Lanzador\Scripts\scr_giro.cs" />
+    <Compile Include="Assets\Resources\Prefabs\Lanzador\Scripts\scr_instanciar_lanzador.cs" />
     <Compile Include="Assets\Resources\Prefabs\Lanzador\Scripts\scr_lanzador.cs" />
     <Compile Include="Assets\Resources\Prefabs\Menus\Boton_Pausa\Script\Scr_btn_pausa.cs" />
     <Compile Include="Assets\Resources\Prefabs\Menus\Menu_Pausa\Scripts\scr_menu_pause.cs" />
+    <Compile Include="Assets\Resources\Prefabs\Menus\Menu_Win\Script\scr_menu_win.cs" />
     <Compile Include="Assets\Resources\Prefabs\rebotador\Scripts\Botones_Rebote.cs" />
     <Compile Include="Assets\Resources\Prefabs\rebotador\Scripts\scr_menu.cs" />
     <Reference Include="UnityEngine">

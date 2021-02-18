@@ -4,15 +4,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using static Unity.Mathematics.math;
 
-public class scr_giro : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
+public class scr_giro : MonoBehaviour, IDragHandler
 {
 
     // Variables de uso continuo
     float angulo;
     GameObject padre;
     Vector3 mousepos_update = Vector3.zero;
-    bool presionando;
-    float Contador = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -20,20 +18,6 @@ public class scr_giro : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
         padre = GameObject.Find("Lanzador");
     }
 
-    void Update()
-    {
-        if (presionando)
-        {
-            Contador += Time.deltaTime;
-            Vector3 crecer = new Vector3(0.2f * Time.deltaTime, 0.2f * Time.deltaTime, 1);
-            transform.localScale += crecer;
-        }
-        else
-        {
-            Contador = 0;
-            transform.localScale = Vector3.one;
-        }
-    }
 
     public void OnDrag(PointerEventData eventData)
     {
@@ -41,11 +25,11 @@ public class scr_giro : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
         mousepos_update = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if( mousepos_update.x > transform.position.x)
         {
-            angulo = 200.0f;
+            angulo = 100.0f;
         }
         else if (mousepos_update.x < transform.position.x)
         {
-            angulo = -200.0f;
+            angulo = -100.0f;
         }
         else
         {
@@ -55,19 +39,4 @@ public class scr_giro : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDrag
         padre.transform.RotateAround(padre.transform.position, Vector3.back, angulo * Time.deltaTime);
     }
 
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        // cuando se termina la accion volver a 0 el angulo de jiro.
-        angulo = 0.0f;
-        if (Contador > 3)
-        {
-            Instantiate(Resources.Load<GameObject>("Prefabs/Lanzador/Prefab_Player/Player"),transform.position , Quaternion.identity);
-        }
-        presionando = false;
-    }
-
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-        presionando = true;
-    }
 }

@@ -11,9 +11,13 @@ public class scr_menu : MonoBehaviour
     // vairables del hijo numero
     public GameObject obj_numero;
 
+    // almacenar cantidad de rebotes
+    GameObject controlador;
+
 
     private void Awake()
     {
+        controlador = GameObject.Find("Boton_Pausa");
         cambiar_numero_rebotador();
     }
 
@@ -23,11 +27,13 @@ public class scr_menu : MonoBehaviour
         {
             vidas_rebotador -= 1;
             cambiar_numero_rebotador();
+            controlador.GetComponentInChildren<Scr_btn_pausa>().rebotes_totales += 1;
         }
     }
 
     void cambiar_numero_rebotador()
     {
+       
         String direcion = "Prefabs/rebotador/Sprites/Numeros/";
         if (vidas_rebotador > 0)
         {
@@ -43,4 +49,5 @@ public class scr_menu : MonoBehaviour
         }
         obj_numero.GetComponentInChildren<SpriteRenderer>().sprite = Resources.Load<Sprite>(direcion);
     }
+
 }
