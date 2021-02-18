@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Cosas_prueba\AspectUtility.cs" />
     <Compile Include="Assets\Cosas_prueba\scr_escenas.cs" />
     <Compile Include="Assets\Resources\Prefabs\Final\Scripts\Scr_FInal.cs" />
     <Compile Include="Assets\Resources\Prefabs\Fondo\Scripts\Instaciar_MR.cs" />
@@ -73,7 +74,6 @@
     <Compile Include="Assets\Resources\Prefabs\Menus\Menu_Pausa\Scripts\scr_menu_pause.cs" />
     <Compile Include="Assets\Resources\Prefabs\rebotador\Scripts\Botones_Rebote.cs" />
     <Compile Include="Assets\Resources\Prefabs\rebotador\Scripts\scr_menu.cs" />
-    <Compile Include="Assets\scr_responsivedesign.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:/Programas/Unity/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

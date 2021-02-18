@@ -1,29 +1,46 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class scr_menu : MonoBehaviour, IPointerClickHandler
+public class scr_menu : MonoBehaviour
 {
-    public bool girar;
-    float velocity = -25;
+    public int vidas_rebotador = 10;
+    
+    // vairables del hijo numero
+    public GameObject obj_numero;
 
-    private void Start()
+
+    private void Awake()
     {
-        girar = false;
+        cambiar_numero_rebotador();
     }
 
-    void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if( girar)
+        if (collision.gameObject.tag == "Player")
         {
-            transform.RotateAround(transform.position, Vector3.back, velocity * Time.deltaTime);
+            vidas_rebotador -= 1;
+            cambiar_numero_rebotador();
         }
-        
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    void cambiar_numero_rebotador()
     {
-        velocity = 0;
+        String direcion = "Prefabs/rebotador/Sprites/Numeros/";
+        if (vidas_rebotador > 0)
+        {
+            direcion += vidas_rebotador;
+        }
+        else if (vidas_rebotador == 0)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            direcion += "infinito";
+        }
+        obj_numero.GetComponentInChildren<SpriteRenderer>().sprite = Resources.Load<Sprite>(direcion);
     }
 }
