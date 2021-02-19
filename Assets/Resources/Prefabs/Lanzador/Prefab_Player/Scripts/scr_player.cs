@@ -13,7 +13,7 @@ public class scr_player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         GameObject lanzador;
         Transform awa;
-        lanzador = GameObject.Find("Lanzador");
+        lanzador = GameObject.Find("Lanzar");
         awa = lanzador.transform.GetChild(0);
         angulo_tiro = new Vector3(
             awa.transform.position.x - lanzador.transform.position.x ,

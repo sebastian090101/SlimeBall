@@ -10,6 +10,7 @@ public class scr_instanciar_lanzador : MonoBehaviour, IPointerDownHandler, IPoin
     // Variables de uso continuo
     bool presionando;
     float Contador = 0;
+    Vector3 mousepos_update = Vector3.zero;
 
     // Start is called before the first frame update
     void Update()
@@ -30,6 +31,8 @@ public class scr_instanciar_lanzador : MonoBehaviour, IPointerDownHandler, IPoin
     public void OnPointerDown(PointerEventData data)
     {
         presionando = true;
+        mousepos_update = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousepos_update.z = 45.0f;
     }
 
 
@@ -38,7 +41,7 @@ public class scr_instanciar_lanzador : MonoBehaviour, IPointerDownHandler, IPoin
         // cuando se termina la accion volver a 0 el angulo de jiro.
         if (Contador > 3)
         {
-            Instantiate(Resources.Load<GameObject>("Prefabs/Lanzador/Prefab_Player/Player"), transform.position, Quaternion.identity);
+            Instantiate(Resources.Load<GameObject>("Prefabs/Lanzador/Prefab_Player/Player"), mousepos_update, Quaternion.identity, GameObject.Find("Obstaculos").transform);
         }
         presionando = false;
     }
