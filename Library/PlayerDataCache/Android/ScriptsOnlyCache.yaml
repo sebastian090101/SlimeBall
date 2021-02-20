@@ -4,16 +4,20 @@ ScriptsOnlyBuild:
     - AspectUtility
     - Botones_Rebote
     - Instaciar_MR
+    - ParedAbajo
+    - ParedArriba
     - Scr_FInal
     - Scr_btn_pausa
+    - scr_bolita_extra
     - scr_escenas
-    - scr_giro
     - scr_instanciar_lanzador
     - scr_lanzador
+    - scr_lanzador_camera
     - scr_menu
     - scr_menu_pause
     - scr_menu_win
     - scr_player
+    - scr_playerFake
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
@@ -66,11 +70,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12178}
     - Class: 114
-      Script: {instanceID: 13644}
+      Script: {instanceID: 13654}
     - Class: 114
-      Script: {instanceID: 13686}
+      Script: {instanceID: 13696}
     - Class: 114
-      Script: {instanceID: 14260}
+      Script: {instanceID: 14270}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -112,6 +116,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 96
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
@@ -127,33 +133,41 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12178}
     - Class: 114
-      Script: {instanceID: 12274}
+      Script: {instanceID: 12204}
     - Class: 114
-      Script: {instanceID: 12566}
+      Script: {instanceID: 12276}
     - Class: 114
-      Script: {instanceID: 13124}
+      Script: {instanceID: 12370}
     - Class: 114
-      Script: {instanceID: 13248}
+      Script: {instanceID: 12558}
     - Class: 114
-      Script: {instanceID: 13312}
+      Script: {instanceID: 12572}
     - Class: 114
-      Script: {instanceID: 13498}
+      Script: {instanceID: 12650}
     - Class: 114
-      Script: {instanceID: 13558}
+      Script: {instanceID: 13132}
     - Class: 114
-      Script: {instanceID: 13630}
+      Script: {instanceID: 13256}
     - Class: 114
-      Script: {instanceID: 13644}
+      Script: {instanceID: 13410}
     - Class: 114
-      Script: {instanceID: 14060}
+      Script: {instanceID: 13508}
     - Class: 114
-      Script: {instanceID: 14150}
+      Script: {instanceID: 13568}
     - Class: 114
-      Script: {instanceID: 14260}
+      Script: {instanceID: 13640}
     - Class: 114
-      Script: {instanceID: 14284}
+      Script: {instanceID: 13654}
     - Class: 114
-      Script: {instanceID: 14328}
+      Script: {instanceID: 14070}
+    - Class: 114
+      Script: {instanceID: 14160}
+    - Class: 114
+      Script: {instanceID: 14270}
+    - Class: 114
+      Script: {instanceID: 14294}
+    - Class: 114
+      Script: {instanceID: 14338}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -161,6 +175,10 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
       Script: {instanceID: 0}
     - Class: 212
       Script: {instanceID: 0}
@@ -397,6 +415,12 @@ ScriptsOnlyBuild:
     className: SpriteShape
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: scr_lanzador_camera
+  - hash:
+      serializedVersion: 2
       Hash: b8a5e8091ab0b8861d2add371082c5e0
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -415,10 +439,16 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: d56e3de6a4c131c61bbdce63a2940180
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: scr_lanzador
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: scr_bolita_extra
   - hash:
       serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
@@ -431,6 +461,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ScrollRect
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ParedAbajo
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -449,6 +485,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.U2D.Animation
     className: SpriteSkinEntity
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ParedArriba
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -553,6 +595,12 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: scr_playerFake
+  - hash:
+      serializedVersion: 2
       Hash: b2f9615dff04c301af434bbd154006d3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -643,7 +691,7 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 01b63e6f21aa407e79bf30278bf446ce
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: scr_instanciar_lanzador
@@ -735,4 +783,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
   - Assets/Scenes/Exit.unity
-  playerPath: D:/Proyectos_Unity/Stealing ball/Versiones/SB v3.0.0.apk
+  playerPath: D:/Proyectos_Unity/Stealing ball/Versiones/SB v3.1.0.apk
