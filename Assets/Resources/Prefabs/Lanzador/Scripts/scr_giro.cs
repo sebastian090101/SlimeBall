@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using static Unity.Mathematics.math;
 
-public class scr_giro : MonoBehaviour, IDragHandler
+public class scr_giro : MonoBehaviour, IPointerDownHandler
 {
 
     // Variables de uso continuo
@@ -18,7 +18,7 @@ public class scr_giro : MonoBehaviour, IDragHandler
     }
 
 
-    public void OnDrag(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData eventData)
     {
 
         if(eventData.position.x > transform.position.x)
