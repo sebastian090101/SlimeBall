@@ -21,17 +21,21 @@ public class scr_menu_win : MonoBehaviour
 
     public void btn_menu()
     {
-        // por el momento no hace nada xd 
+        SceneManager.LoadScene("Menu_Niveles");
     }
 
     public void btn_restart()
     {
-        SceneManager.LoadScene("SampleScene");
+        string scene = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(scene);
         Time.timeScale = 1;
     }
     public void btn_next()
     {
-        SceneManager.LoadScene("SampleScene");
+        Scene scene_index = SceneManager.GetActiveScene();
+        int index = scene_index.buildIndex;
+        index+=1;
+        SceneManager.LoadScene(index);
         Time.timeScale = 1;
     }
 

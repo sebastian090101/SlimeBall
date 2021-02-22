@@ -64,23 +64,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Cosas_prueba\AspectUtility.cs" />
-    <Compile Include="Assets\Cosas_prueba\scr_escenas.cs" />
+    <Compile Include="Assets\Cosas_prueba\scr_Control_Scenas_Inicio.cs" />
     <Compile Include="Assets\Resources\Prefabs\Bolita_Extra\Scripts\scr_bolita_extra.cs" />
     <Compile Include="Assets\Resources\Prefabs\Final\Scripts\Scr_FInal.cs" />
-    <Compile Include="Assets\Resources\Prefabs\Fondo\Scripts\Instaciar_MR.cs" />
     <Compile Include="Assets\Resources\Prefabs\Lanzador\Prefab_Player\Scripts\scr_player.cs" />
     <Compile Include="Assets\Resources\Prefabs\Lanzador\Prefab_Player\Scripts\scr_playerFake.cs" />
-    <Compile Include="Assets\Resources\Prefabs\Lanzador\Scripts\scr_giro.cs" />
     <Compile Include="Assets\Resources\Prefabs\Lanzador\Scripts\scr_instanciar_lanzador.cs" />
     <Compile Include="Assets\Resources\Prefabs\Lanzador\Scripts\scr_lanzador.cs" />
+    <Compile Include="Assets\Resources\Prefabs\Lanzador\Scripts\scr_lanzador_camera.cs" />
     <Compile Include="Assets\Resources\Prefabs\Menus\Boton_Pausa\Script\Scr_btn_pausa.cs" />
     <Compile Include="Assets\Resources\Prefabs\Menus\Menu_Pausa\Scripts\scr_menu_pause.cs" />
     <Compile Include="Assets\Resources\Prefabs\Menus\Menu_Win\Script\scr_menu_win.cs" />
     <Compile Include="Assets\Resources\Prefabs\Paredes\Scripts\ParedAbajo.cs" />
     <Compile Include="Assets\Resources\Prefabs\Paredes\Scripts\ParedArriba.cs" />
-    <Compile Include="Assets\Resources\Prefabs\rebotador\Scripts\Botones_Rebote.cs" />
     <Compile Include="Assets\Resources\Prefabs\rebotador\Scripts\scr_menu.cs" />
-    <Compile Include="Assets\scr_lanzador_camera.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:/Programas/Unity/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

@@ -9,8 +9,6 @@ public class scr_instanciar_lanzador : MonoBehaviour, IPointerDownHandler, IDrag
 
     // Variables de uso continuo
     int contador = 0, aux = 0;
-    bool presionando;
-    float Contador = 0;
     public Vector3 mousepos_update = Vector3.zero;
     public Vector3 posicion_inicial = Vector3.zero;
     Vector3 obj_lanzador_XYZ_camera = Vector3.zero;
@@ -26,26 +24,13 @@ public class scr_instanciar_lanzador : MonoBehaviour, IPointerDownHandler, IDrag
 
     // Start is called before the first frame update
     void Update()
-    {   
+    {
         // poscicion de un objeto del Canvas en la Main Camera
         obj_lanzador_XYZ_camera = Camera.main.ScreenToWorldPoint(padre.transform.GetChild(0).transform.position);
-
-        if (presionando)
-        {
-            Contador += Time.deltaTime;
-            Vector3 crecer = new Vector3(0.2f * Time.deltaTime, 0.2f * Time.deltaTime, 1);
-            transform.localScale += crecer;
-        }
-        else
-        {
-            Contador = 0;
-            transform.localScale = Vector3.one;
-        }
     }
 
     public void OnPointerDown(PointerEventData data)
     {
-        presionando = true;
         posicion_inicial = padre.transform.position;
     }
 
@@ -74,7 +59,6 @@ public class scr_instanciar_lanzador : MonoBehaviour, IPointerDownHandler, IDrag
             StartCoroutine("Instanciar_Bolita");
         }
         
-        presionando = false;
         padre_child_flecha.SetActive(false);
         
     }
@@ -100,7 +84,6 @@ public class scr_instanciar_lanzador : MonoBehaviour, IPointerDownHandler, IDrag
         // Repetir si tenemos mas bolitas
         if(aux > 0)
         {
-            print("dentro del segundo if ");
             StartCoroutine("Instanciar_Bolita");
         }
 

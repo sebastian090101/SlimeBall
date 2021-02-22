@@ -7,7 +7,8 @@ using UnityEngine.EventSystems;
 public class scr_menu : MonoBehaviour
 {
     public int vidas_rebotador = 10;
-    
+    public float velocity = -25;
+    public bool girar = false;
     // vairables del hijo numero
     public GameObject obj_numero;
 
@@ -20,6 +21,16 @@ public class scr_menu : MonoBehaviour
         controlador = GameObject.Find("Boton_Pausa");
         cambiar_numero_rebotador();
     }
+
+  
+    void Update()
+    {
+        if (girar)
+        {
+            transform.RotateAround(transform.position, Vector3.back, velocity * Time.deltaTime);
+        }
+    }
+       
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
