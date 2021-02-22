@@ -8,6 +8,7 @@ public class scr_instanciar_lanzador : MonoBehaviour, IPointerDownHandler, IDrag
 {
 
     // Variables de uso continuo
+    int contador = 0, aux = 0;
     bool presionando;
     float Contador = 0;
     public Vector3 mousepos_update = Vector3.zero;
@@ -68,15 +69,42 @@ public class scr_instanciar_lanzador : MonoBehaviour, IPointerDownHandler, IDrag
     {
         if (padre.GetComponent<scr_lanzador>().bolitas >0)
         {
-            Instantiate(Resources.Load<GameObject>("Prefabs/Lanzador/Prefab_Player/Player"),
-                                                obj_lanzador_XYZ_camera,
-                                                Quaternion.identity,
-                                                GameObject.Find("Obstaculos").transform);
-            padre.GetComponent<scr_lanzador>().cambiar_numero_rebotador(false);
+            contador = padre.GetComponent<scr_lanzador>().bolitas;
+            aux = contador;
+            StartCoroutine("Instanciar_Bolita");
         }
         
         presionando = false;
         padre_child_flecha.SetActive(false);
         
     }
+
+    IEnumerator Instanciar_Bolita()
+    {
+        // esperar si no es la primera vez
+        if ( aux != contador){
+            yield return new WaitForSeconds(1);
+        }
+        else
+        {
+            yield return null;
+        }
+        // instaciar bolita, restar 1 en el contador del obj padre y en el auxiliar interno de la funcion
+        Instantiate(Resources.Load<GameObject>("Prefabs/Lanzador/Prefab_Player/Player"),
+                                       obj_lanzador_XYZ_camera,
+                                       Quaternion.identity,
+                                       GameObject.Find("Obstaculos").transform);
+        padre.GetComponent<scr_lanzador>().cambiar_numero_rebotador(false);
+        aux--;
+
+        // Repetir si tenemos mas bolitas
+        if(aux > 0)
+        {
+            print("dentro del segundo if ");
+            StartCoroutine("Instanciar_Bolita");
+        }
+
+    }
+
+    
 }
