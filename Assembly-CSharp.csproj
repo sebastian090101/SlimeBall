@@ -77,6 +77,7 @@
     <Compile Include="Assets\Resources\Prefabs\Menus\Menu_Win\Script\scr_menu_win.cs" />
     <Compile Include="Assets\Resources\Prefabs\Paredes\Scripts\ParedAbajo.cs" />
     <Compile Include="Assets\Resources\Prefabs\Paredes\Scripts\ParedArriba.cs" />
+    <Compile Include="Assets\Resources\Prefabs\Paredes\Scripts\ParedesVertical.cs" />
     <Compile Include="Assets\Resources\Prefabs\rebotador\Scripts\scr_menu.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:/Programas/Unity/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

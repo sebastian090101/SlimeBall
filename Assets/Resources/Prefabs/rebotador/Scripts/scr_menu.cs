@@ -15,6 +15,9 @@ public class scr_menu : MonoBehaviour
     // almacenar cantidad de rebotes
     GameObject controlador;
 
+    //variables de sonido
+    AudioSource Controler_AS;
+
 
     private void Awake()
     {
@@ -22,7 +25,12 @@ public class scr_menu : MonoBehaviour
         cambiar_numero_rebotador();
     }
 
-  
+    private void Start()
+    {
+        Controler_AS = GameObject.Find("Canvas").GetComponent<AudioSource>();
+    }
+
+
     void Update()
     {
         if (girar)
@@ -39,6 +47,7 @@ public class scr_menu : MonoBehaviour
             vidas_rebotador -= 1;
             cambiar_numero_rebotador();
             controlador.GetComponentInChildren<Scr_btn_pausa>().rebotes_totales += 1;
+            Controler_AS.PlayOneShot((AudioClip)Resources.Load("Sounds/rebote"));
         }
     }
 
