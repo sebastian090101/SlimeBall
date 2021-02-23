@@ -5,14 +5,14 @@ using UnityEngine;
 public class scr_player : MonoBehaviour
 {
     Rigidbody2D rb;
-    TrailRenderer tr;
-    Vector2 angulo_tiro = Vector2.zero;
+    AudioSource Controler_AS;
+    float tiempo_vida = 0.0f;
     
     // Start is called before the first frame update
     void Start()
     {
+        Controler_AS = GameObject.Find("Canvas").GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
-        tr = GetComponent<TrailRenderer>();
 
         // Obetenemos el objeto que nos da el angulo de tiro 
         GameObject lanzador_child = GameObject.Find("Lanzar").transform.GetChild(0).gameObject;
@@ -24,6 +24,18 @@ public class scr_player : MonoBehaviour
 
         rb.AddRelativeForce(uwu*50);
         
+    }
+
+    private void Update()
+    {
+        tiempo_vida += Time.deltaTime;
+        if (tiempo_vida >= 10.0f)
+        {
+            Controler_AS.PlayOneShot((AudioClip)Resources.Load("Sounds/pop"));
+            Instantiate(Resources.Load("Particle_Systems/Explosion_player"),transform.position, transform.rotation);
+            Destroy(transform.gameObject);
+            GameObject.Find("Lanzar").GetComponent<scr_lanzador>().cambiar_numero_rebotador(true);
+        }
     }
 
 }

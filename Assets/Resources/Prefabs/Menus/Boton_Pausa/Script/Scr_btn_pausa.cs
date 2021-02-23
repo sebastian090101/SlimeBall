@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Scr_btn_pausa : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Scr_btn_pausa : MonoBehaviour
     private void Update()
     {
         time += Time.deltaTime;
+        transform.GetChild(0).GetComponent<Text>().text = (int)time + " S";
     }
 
     public void pausa()

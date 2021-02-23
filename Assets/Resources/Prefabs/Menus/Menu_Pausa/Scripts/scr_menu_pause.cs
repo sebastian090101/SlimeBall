@@ -11,6 +11,11 @@ public class scr_menu_pause : MonoBehaviour
         SceneManager.LoadScene(scene);
         Time.timeScale = 1;
     }
+    public void btn_menu()
+    {
+        SceneManager.LoadScene("Menu_Niveles");
+        Time.timeScale = 1;
+    }
     public void continuar()
     {
         if (GameObject.Find("menu_pause(Clone)"))

@@ -22,6 +22,7 @@ public class scr_menu_win : MonoBehaviour
     public void btn_menu()
     {
         SceneManager.LoadScene("Menu_Niveles");
+        Time.timeScale = 1;
     }
 
     public void btn_restart()

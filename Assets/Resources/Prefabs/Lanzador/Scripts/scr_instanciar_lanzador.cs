@@ -14,19 +14,21 @@ public class scr_instanciar_lanzador : MonoBehaviour, IPointerDownHandler, IDrag
     Vector3 obj_lanzador_XYZ_camera = Vector3.zero;
     GameObject padre, padre_child_flecha;
     RectTransform rt;
+    AudioSource Controler_AS;
 
     private void Start()
     {
         padre = GameObject.Find("Lanzar");
         padre_child_flecha = padre.transform.GetChild(1).gameObject;
         rt = padre_child_flecha.GetComponent<RectTransform>();
+        Controler_AS = GameObject.Find("Canvas").GetComponent<AudioSource>();
     }
 
     // Start is called before the first frame update
     void Update()
     {
         // poscicion de un objeto del Canvas en la Main Camera
-        obj_lanzador_XYZ_camera = Camera.main.ScreenToWorldPoint(padre.transform.GetChild(0).transform.position);
+        obj_lanzador_XYZ_camera = Camera.main.ScreenToWorldPoint(padre.transform.GetChild(3).transform.position);
     }
 
     public void OnPointerDown(PointerEventData data)
@@ -79,6 +81,7 @@ public class scr_instanciar_lanzador : MonoBehaviour, IPointerDownHandler, IDrag
                                        Quaternion.identity,
                                        GameObject.Find("Obstaculos").transform);
         padre.GetComponent<scr_lanzador>().cambiar_numero_rebotador(false);
+        Controler_AS.PlayOneShot((AudioClip)Resources.Load("Sounds/disparo"));
         aux--;
 
         // Repetir si tenemos mas bolitas
