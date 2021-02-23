@@ -73,7 +73,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 14268}
     - Class: 114
-      Script: {instanceID: 17498}
+      Script: {instanceID: 17586}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -200,11 +200,17 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 62
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 82
       Script: {instanceID: 0}
     - Class: 83
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 96
       Script: {instanceID: 0}
@@ -262,6 +268,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
+      Script: {instanceID: 0}
     - Class: 212
       Script: {instanceID: 0}
     - Class: 213
@@ -286,6 +296,10 @@ ScriptsOnlyBuild:
     - Class: 48
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -335,6 +349,10 @@ ScriptsOnlyBuild:
     - Class: 48
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -1388,4 +1406,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Scenas_Niveles/Nivel_4.unity
   - Assets/Scenes/Scenas_Niveles/Nivel_5.unity
   - Assets/Scenes/Exit.unity
-  playerPath: D:/Proyectos_Unity/Stealing ball/Versiones/SB v3.2.1.apk
+  playerPath: D:/Proyectos_Unity/Stealing ball/Versiones/SB v3.3.0.apk
