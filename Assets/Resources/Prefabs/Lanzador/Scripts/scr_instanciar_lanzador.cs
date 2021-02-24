@@ -69,7 +69,7 @@ public class scr_instanciar_lanzador : MonoBehaviour, IPointerDownHandler, IDrag
     {
         // esperar si no es la primera vez
         if ( aux != contador){
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
         }
         else
         {

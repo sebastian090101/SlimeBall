@@ -7,10 +7,12 @@ public class scr_player : MonoBehaviour
     Rigidbody2D rb;
     AudioSource Controler_AS;
     float tiempo_vida = 0.0f;
+    bool powerup = false;
     
     // Start is called before the first frame update
     void Start()
     {
+        //Sonido del player al explotar
         Controler_AS = GameObject.Find("Canvas").GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
 
@@ -31,11 +33,28 @@ public class scr_player : MonoBehaviour
         tiempo_vida += Time.deltaTime;
         if (tiempo_vida >= 10.0f)
         {
-            Controler_AS.PlayOneShot((AudioClip)Resources.Load("Sounds/pop"));
-            Instantiate(Resources.Load("Particle_Systems/Explosion_player"),transform.position, transform.rotation);
-            Destroy(transform.gameObject);
-            GameObject.Find("Lanzar").GetComponent<scr_lanzador>().cambiar_numero_rebotador(true);
+            matar_player(false);
         }
     }
 
+
+    public void matar_player(bool muerte)
+    {
+        Controler_AS.PlayOneShot((AudioClip)Resources.Load("Sounds/pop_player"));
+        Instantiate(Resources.Load("Particle_Systems/Explosion_player"), transform.position, transform.rotation);
+        Destroy(transform.gameObject);
+        if (!muerte)
+        {
+            GameObject.Find("Lanzar").GetComponent<scr_lanzador>().cambiar_numero_rebotador(true);
+        }
+        
+    }
+    public void set_powerup(bool awa)
+    {
+        this.powerup = awa;
+    }
+    public bool get_powerup()
+    {
+        return powerup;
+    }
 }

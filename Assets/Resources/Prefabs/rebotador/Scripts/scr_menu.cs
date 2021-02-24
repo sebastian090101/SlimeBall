@@ -44,10 +44,21 @@ public class scr_menu : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            vidas_rebotador -= 1;
-            cambiar_numero_rebotador();
-            controlador.GetComponentInChildren<Scr_btn_pausa>().rebotes_totales += 1;
-            Controler_AS.PlayOneShot((AudioClip)Resources.Load("Sounds/rebote"));
+            bool powerup = collision.gameObject.GetComponent<scr_player>().get_powerup();
+            if (powerup== false)
+            {
+                vidas_rebotador -= 1;
+                cambiar_numero_rebotador();
+                controlador.GetComponentInChildren<Scr_btn_pausa>().rebotes_totales += 1;
+                Controler_AS.PlayOneShot((AudioClip)Resources.Load("Sounds/rebote"));
+            }
+            else
+            {
+                Destroy(transform.gameObject);
+            }
+            
+
+            // aumento velocidad del player
         }
     }
 
@@ -61,7 +72,10 @@ public class scr_menu : MonoBehaviour
         }
         else if (vidas_rebotador == 0)
         {
+            Controler_AS.PlayOneShot((AudioClip)Resources.Load("Sounds/pop_rebotador"));
+            Instantiate(Resources.Load("Particle_Systems/Explosion_Rebotador"), transform.position, transform.rotation);
             Destroy(this.gameObject);
+            
         }
         else
         {

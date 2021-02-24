@@ -11,7 +11,7 @@ public class scr_lanzador : MonoBehaviour, IDragHandler
     GameObject padre, canvas, lanzador_camera;
     Vector3 mousePos = Vector3.one;
 
-    public int bolitas = 0;
+    public int bolitas = 1;
 
     private void Awake()
     {
@@ -25,7 +25,7 @@ public class scr_lanzador : MonoBehaviour, IDragHandler
     {
         padre.transform.position = new Vector3(canvas.transform.position.x, +canvas.transform.position.y * 0.15f, 45.0f);
         lanzador_camera.transform.position = Camera.main.ScreenToWorldPoint(padre.transform.position);
-        cambiar_numero_rebotador(true);
+        cambiar_numero_rebotador(true); cambiar_numero_rebotador(false);
     }
 
     public void OnDrag(PointerEventData eventData)
