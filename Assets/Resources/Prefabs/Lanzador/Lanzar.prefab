@@ -405,7 +405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj_numero: {fileID: 2956185395972548714}
-  bolitas: 0
+  bolitas: 1
 --- !u!50 &7815810661280655639
 Rigidbody2D:
   serializedVersion: 4

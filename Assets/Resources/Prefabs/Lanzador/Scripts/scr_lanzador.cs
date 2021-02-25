@@ -30,7 +30,9 @@ public class scr_lanzador : MonoBehaviour, IDragHandler
 
     public void OnDrag(PointerEventData eventData)
     {
-        mousePos = new Vector3(eventData.position.x,  canvas.transform.position.y*0.15f, 45.0f);
+        mousePos = new Vector3(Mathf.Clamp(eventData.position.x, canvas.transform.position.x*0.1f , canvas.transform.position.x * 1.8f),
+                               canvas.transform.position.y*0.15f,
+                               45.0f);
         padre.transform.position = mousePos;
         lanzador_camera.transform.position = Camera.main.ScreenToWorldPoint(padre.transform.position);
     }

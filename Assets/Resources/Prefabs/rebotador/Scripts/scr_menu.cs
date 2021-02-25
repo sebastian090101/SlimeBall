@@ -55,6 +55,7 @@ public class scr_menu : MonoBehaviour
             else
             {
                 Destroy(transform.gameObject);
+                collision.gameObject.GetComponent<scr_player>().set_powerup(false);
             }
             
 

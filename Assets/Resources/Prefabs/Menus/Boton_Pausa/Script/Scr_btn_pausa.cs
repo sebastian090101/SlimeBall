@@ -37,13 +37,10 @@ public class Scr_btn_pausa : MonoBehaviour
         Instantiate(prefab_menu_rebotadores, new Vector3(canvas.transform.position.x , canvas.transform.position.y , 0), transform.rotation, canvas.transform );
     }
 
-    void sumar_rebote()
-    {
-        rebotes_totales += 1;
-    }
-
     public void perder()
     {
+        int a = PlayerPrefs.GetInt("Vidas");
+        PlayerPrefs.SetInt("Vidas", a-1);
         Time.timeScale = 0;
         //destruimos menu perder si ya existe
         if (GameObject.Find("Menu_Loss(Clone)"))

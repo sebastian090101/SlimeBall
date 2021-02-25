@@ -39,16 +39,21 @@ public class scr_instanciar_lanzador : MonoBehaviour, IPointerDownHandler, IDrag
     public void OnDrag(PointerEventData data)
     {
         // posicion del mouse en el arrastre
-        mousepos_update = new Vector3(data.position.x , data.position.y , 50.0f);
+        mousepos_update = new Vector3(data.position.x, data.position.y, 50.0f);
         // obtenemos el vector del mouse/lanzador
-        Vector3 vector_resultante = new Vector3(mousepos_update.x - posicion_inicial.x,
-                                            mousepos_update.y - posicion_inicial.y,
+        float x = mousepos_update.x - posicion_inicial.x;
+        float y = mousepos_update.y - posicion_inicial.y;
+        Vector3 vector_resultante = new Vector3(x, y, padre.transform.up.z);
+        float height = Mathf.Sqrt(pow(vector_resultante.x, 2) + pow(vector_resultante.y, 2));
+
+        padre.transform.up = new Vector3 (  Mathf.Clamp(x / height, -0.800f , 0.800f),
+                                            Mathf.Clamp(y / height, 0.600f, 1.00f),
                                             padre.transform.up.z);
-        // giramos al padre 
-        padre.transform.up = vector_resultante.normalized;
-        //activamos la flecha, cambiamos su height y listo
+
+
         padre_child_flecha.SetActive(true);
-        float height = Mathf.Sqrt(pow(vector_resultante.x ,2) + pow(vector_resultante.y ,2));
+        //activamos la flecha, cambiamos su height y listo
+        
         rt.sizeDelta = new Vector2(10, height/5);       
     }
 

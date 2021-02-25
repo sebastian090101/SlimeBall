@@ -65,6 +65,8 @@
   <ItemGroup>
     <Compile Include="Assets\Cosas_prueba\AspectUtility.cs" />
     <Compile Include="Assets\Cosas_prueba\scr_Control_Scenas_Inicio.cs" />
+    <Compile Include="Assets\Cosas_prueba\scr_IV.cs" />
+    <Compile Include="Assets\Cosas_prueba\scr_iniciarvariables.cs" />
     <Compile Include="Assets\Resources\Prefabs\Bolita_Extra\Scripts\scr_bolita_extra.cs" />
     <Compile Include="Assets\Resources\Prefabs\Final\Scripts\Scr_FInal.cs" />
     <Compile Include="Assets\Resources\Prefabs\Lanzador\Prefab_Player\Scripts\scr_player.cs" />

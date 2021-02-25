@@ -1810,6 +1810,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4671386669522910495, guid: d1d08095c86e01242bc15d8c32fd870e,
+        type: 3}
+      propertyPath: time
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4671386670831804056, guid: d1d08095c86e01242bc15d8c32fd870e,
         type: 3}
       propertyPath: m_AnchorMin.x
