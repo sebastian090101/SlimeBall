@@ -24,6 +24,7 @@ public class Scr_FInal : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            collision.gameObject.GetComponent<scr_player>().matar_player(true);
             vidas_final -= 1;
             cambiar_numero_rebotador();
             Controler_AS.PlayOneShot((AudioClip)Resources.Load("Sounds/player_llega_final"));
@@ -49,7 +50,6 @@ public class Scr_FInal : MonoBehaviour
 
     void cambiar_numero_rebotador()
     {
-
         string direcion = "Prefabs/rebotador/Sprites/Numeros/";
         if (vidas_final > 0)
         {

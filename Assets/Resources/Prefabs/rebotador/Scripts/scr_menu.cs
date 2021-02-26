@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class scr_menu : MonoBehaviour
 {
+    Collision2D auxiliar;
     public int vidas_rebotador = 10;
     public float velocity = -25;
     public bool girar = false;
@@ -44,8 +45,9 @@ public class scr_menu : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            auxiliar = collision;
             bool powerup = collision.gameObject.GetComponent<scr_player>().get_powerup();
-            if (powerup== false)
+            if (!powerup)
             {
                 vidas_rebotador -= 1;
                 cambiar_numero_rebotador();
@@ -55,10 +57,8 @@ public class scr_menu : MonoBehaviour
             else
             {
                 Destroy(transform.gameObject);
-                collision.gameObject.GetComponent<scr_player>().set_powerup(false);
             }
-            
-
+            collision.gameObject.GetComponent<scr_player>().rebotes_consecutivos += 1;
             // aumento velocidad del player
         }
     }
@@ -84,5 +84,5 @@ public class scr_menu : MonoBehaviour
         }
         obj_numero.GetComponentInChildren<SpriteRenderer>().sprite = Resources.Load<Sprite>(direcion);
     }
-
+    
 }

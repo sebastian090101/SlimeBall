@@ -7,8 +7,8 @@ public class scr_player : MonoBehaviour
     Rigidbody2D rb;
     AudioSource Controler_AS;
     float tiempo_vida = 0.0f;
-    bool powerup = false;
-    int rebotes_consecutivos = 0;
+    bool powerup = false, sumar_velocidad_bool = false;
+    public int rebotes_consecutivos = 0;
 
     Vector2 a = Vector2.zero; Vector2 b = Vector2.zero;
     Vector2 resultado = Vector2.zero;
@@ -29,8 +29,9 @@ public class scr_player : MonoBehaviour
 
         Vector3 uwu = new Vector3(posicion_final.x - posicion_inicial.x, posicion_final.y - posicion_inicial.y, 50);
 
-        rb.AddRelativeForce(uwu*50);
+        rb.AddRelativeForce(uwu*40);
         StartCoroutine("Direccion");
+        StartCoroutine("Rebotes_Consecutivos");
 
 
     }
@@ -56,7 +57,7 @@ public class scr_player : MonoBehaviour
         }
         else
         {
-            if (bolitas()== 1)
+            if (bolitas()<= 1)
             {
                 GameObject.Find("Boton_Pausa").GetComponent<Scr_btn_pausa>().perder();
             }
@@ -65,11 +66,21 @@ public class scr_player : MonoBehaviour
     }
     public void set_powerup(bool awa)
     {
+        if (awa)
+        {
+            StartCoroutine("contar_powerup");
+        }
         this.powerup = awa;
     }
     public bool get_powerup()
     {
         return powerup;
+    }
+
+    IEnumerator contar_powerup()
+    {      
+        yield return new WaitForSeconds(5f);
+        set_powerup(false);
     }
 
     int bolitas()
@@ -80,37 +91,38 @@ public class scr_player : MonoBehaviour
 
         return a+b+c;
     }
-    
+    // REBOTES CONSECUTIVOS
 
     void sumar_velocidad()
     {
-        rb.AddForce(resultado*500);
+        print("awa");
+        rb.AddForce(rb.velocity*22);
+        sumar_velocidad_bool = true;
     }
-
 
     IEnumerator Direccion()
     {
         a = transform.position;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.0005f);
         b = transform.position;
 
             yield return null;
         resultado = new Vector2(b.x - a.x , b.y - b.x );
             StartCoroutine("Direccion");
     }
-
+    int aux = 0;
     IEnumerator Rebotes_Consecutivos()
     {
-        int aux = rebotes_consecutivos;
-        yield return new WaitForSeconds(2f);
+        aux = rebotes_consecutivos;
+        yield return new WaitForSeconds(0.3f);
         
         yield return null;
 
         if (aux == rebotes_consecutivos)
         {
-            aux = 0;
+            rebotes_consecutivos  = 0;
         }
-        else if (aux > rebotes_consecutivos && aux < 4)
+        else if (aux < rebotes_consecutivos && aux < 4)
         {
             aux += 1;
         }
@@ -118,7 +130,12 @@ public class scr_player : MonoBehaviour
         {
             sumar_velocidad();
         }
+        // dejamos de ejecutar el bucle si ya se aumento velocidad
+        if(!sumar_velocidad_bool)
+        {
+            StartCoroutine("Rebotes_Consecutivos");
+        }  
 
-        StartCoroutine("Rebotes_COnsecutivos");
+       
     }
 }

@@ -84,6 +84,7 @@
     <Compile Include="Assets\Resources\Prefabs\Paredes\Scripts\ParedesVertical.cs" />
     <Compile Include="Assets\Resources\Prefabs\Powerup\Scripts\scr_powerup.cs" />
     <Compile Include="Assets\Resources\Prefabs\rebotador\Scripts\scr_menu.cs" />
+    <Compile Include="Assets\scr_flecha.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:/Programas/Unity/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

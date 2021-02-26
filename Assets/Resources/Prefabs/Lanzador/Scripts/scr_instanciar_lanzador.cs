@@ -34,27 +34,29 @@ public class scr_instanciar_lanzador : MonoBehaviour, IPointerDownHandler, IDrag
     public void OnPointerDown(PointerEventData data)
     {
         posicion_inicial = padre.transform.position;
+        //posicion_inicial = new Vector3(padre.transform.GetChild(1).transform.position.x, padre.transform.GetChild(1).transform.position.y, 50.0f);
     }
 
     public void OnDrag(PointerEventData data)
     {
+
         // posicion del mouse en el arrastre
         mousepos_update = new Vector3(data.position.x, data.position.y, 50.0f);
         // obtenemos el vector del mouse/lanzador
         float x = mousepos_update.x - posicion_inicial.x;
         float y = mousepos_update.y - posicion_inicial.y;
         Vector3 vector_resultante = new Vector3(x, y, padre.transform.up.z);
-        float height = Mathf.Sqrt(pow(vector_resultante.x, 2) + pow(vector_resultante.y, 2));
 
+        float height = Mathf.Sqrt(pow(vector_resultante.x, 2) + pow(vector_resultante.y, 2));
+        
+        // girar al padre
         padre.transform.up = new Vector3 (  Mathf.Clamp(x / height, -0.800f , 0.800f),
                                             Mathf.Clamp(y / height, 0.600f, 1.00f),
                                             padre.transform.up.z);
-
-
-        padre_child_flecha.SetActive(true);
-        //activamos la flecha, cambiamos su height y listo
         
-        rt.sizeDelta = new Vector2(10, height/5);       
+        //activamos la flecha, cambiamos su height y listo              
+        padre_child_flecha.SetActive(true);
+        rt.sizeDelta = new Vector2(10, height/5);      
     }
 
     public void OnEndDrag(PointerEventData eventData)

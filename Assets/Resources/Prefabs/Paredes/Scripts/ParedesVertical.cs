@@ -17,6 +17,7 @@ public class ParedesVertical : MonoBehaviour
         {
             controlador.GetComponentInChildren<Scr_btn_pausa>().rebotes_totales += 1;
             Controler_AS.PlayOneShot((AudioClip)Resources.Load("Sounds/rebote"));
+            collision.gameObject.GetComponent<scr_player>().rebotes_consecutivos += 1;
         }
     }
 }

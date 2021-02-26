@@ -120,13 +120,14 @@ GameObject:
   - component: {fileID: 7815810660477490730}
   - component: {fileID: 7815810660477490726}
   - component: {fileID: 7815810660477490729}
+  - component: {fileID: 7287792933069288422}
   m_Layer: 0
   m_Name: Flecha
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7815810660477490730
 RectTransform:
   m_ObjectHideFlags: 0
@@ -141,10 +142,10 @@ RectTransform:
   m_Father: {fileID: 7815810661280655642}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 70.8}
-  m_SizeDelta: {x: 10, y: 75.11}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 39.6}
+  m_SizeDelta: {x: 10, y: 77}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &7815810660477490726
 CanvasRenderer:
@@ -183,6 +184,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7287792933069288422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7815810660477490733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fac2ec73343dd5048b6ea5a8fb33e8b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7815810660590325216
 GameObject:
   m_ObjectHideFlags: 0

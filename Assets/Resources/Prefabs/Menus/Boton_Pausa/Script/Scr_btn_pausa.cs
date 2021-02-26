@@ -9,9 +9,11 @@ public class Scr_btn_pausa : MonoBehaviour
     public float time = 30.0f;
     float time_second = 0.0f;
     public int rebotes_totales = 0;
+    public float slow_prueba = 1;
 
     private void Update()
     {
+        Time.timeScale = slow_prueba;
         time -= Time.deltaTime;
         time_second = (int)time;
         transform.GetChild(0).GetComponent<Text>().text = time_second + " : " + "00" + " s";

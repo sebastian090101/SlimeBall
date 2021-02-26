@@ -1463,6 +1463,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4671386669522910495, guid: d1d08095c86e01242bc15d8c32fd870e,
+        type: 3}
+      propertyPath: time
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 4671386670831804056, guid: d1d08095c86e01242bc15d8c32fd870e,
         type: 3}
       propertyPath: m_AnchorMin.x
@@ -2218,6 +2223,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5090198528160941862, guid: c7f17bd944564654a9c7a781e701d36e,
+        type: 3}
+      propertyPath: valor
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7f17bd944564654a9c7a781e701d36e, type: 3}
 --- !u!1001 &1275871898332139773
@@ -2299,7 +2309,7 @@ PrefabInstance:
     - target: {fileID: 3954999792478446219, guid: 83a1255defa6fc1499c4b990c3cf74d9,
         type: 3}
       propertyPath: vidas_final
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5394394449404450920, guid: 83a1255defa6fc1499c4b990c3cf74d9,
         type: 3}
@@ -2568,6 +2578,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7815810661280655643, guid: 990fd774f2093304c967a8594471b941,
+        type: 3}
+      propertyPath: bolitas
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7815810661280655645, guid: 990fd774f2093304c967a8594471b941,
         type: 3}
