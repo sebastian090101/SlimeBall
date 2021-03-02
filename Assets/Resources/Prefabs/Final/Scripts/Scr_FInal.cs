@@ -34,6 +34,8 @@ public class Scr_FInal : MonoBehaviour
 
     public void win()
     {
+        int nivel = PlayerPrefs.GetInt("Niveles" );
+        PlayerPrefs.SetInt("Niveles", nivel += 1);
         Time.timeScale = 0;
         //destruimos boton pause si ya existe
         if (GameObject.Find("Menu_win(Clone)"))

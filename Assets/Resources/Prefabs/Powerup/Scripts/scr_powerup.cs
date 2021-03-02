@@ -16,6 +16,7 @@ public class scr_powerup : MonoBehaviour
             Controler_AS.PlayOneShot((AudioClip)Resources.Load("Sounds/powerup"));
             collision.gameObject.GetComponent<scr_player>().set_powerup(true);
             Destroy(transform.gameObject);
+            collision.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
         }
     }
 

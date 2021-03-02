@@ -6,6 +6,7 @@ public class scr_IV : MonoBehaviour
 {
     private void Start()
     {
-        PlayerPrefs.SetInt("Vidas", 5);
+        // Descomentar esta linea en fase de pruebas y comentarlo para mandar un APK
+        //PlayerPrefs.SetInt("Niveles", 1);
     }
 }

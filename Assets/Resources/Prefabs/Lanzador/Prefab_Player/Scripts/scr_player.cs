@@ -10,6 +10,8 @@ public class scr_player : MonoBehaviour
     bool powerup = false, sumar_velocidad_bool = false;
     public int rebotes_consecutivos = 0;
 
+    public float velocidad = 40.0f;
+
     Vector2 a = Vector2.zero; Vector2 b = Vector2.zero;
     Vector2 resultado = Vector2.zero;
 
@@ -29,7 +31,7 @@ public class scr_player : MonoBehaviour
 
         Vector3 uwu = new Vector3(posicion_final.x - posicion_inicial.x, posicion_final.y - posicion_inicial.y, 50);
 
-        rb.AddRelativeForce(uwu*40);
+        rb.AddRelativeForce(uwu*velocidad);
         StartCoroutine("Direccion");
         StartCoroutine("Rebotes_Consecutivos");
 
@@ -38,11 +40,21 @@ public class scr_player : MonoBehaviour
 
     private void Update()
     {
+        print(rb.velocity.magnitude);
+        if( rb.velocity.magnitude > 1800.0f) ajustar_velocidad(true);
+        else if (rb.velocity.magnitude < 1200.0f) ajustar_velocidad(false);
+
+
         tiempo_vida += Time.deltaTime;
         if (tiempo_vida >= 10.0f)
         {
             matar_player(false);
         }
+    }
+
+    private void FixedUpdate()
+    {
+        
     }
 
 
@@ -81,6 +93,7 @@ public class scr_player : MonoBehaviour
     {      
         yield return new WaitForSeconds(5f);
         set_powerup(false);
+        transform.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
     }
 
     int bolitas()
@@ -91,11 +104,24 @@ public class scr_player : MonoBehaviour
 
         return a+b+c;
     }
+
+    //Ajustar velocidad
+    void ajustar_velocidad(bool mayor)
+    {
+        if (mayor)
+        {
+            rb.velocity = rb.velocity.normalized * 1800.0f;
+        }
+        else
+        {
+            rb.velocity = rb.velocity.normalized * 1200.0f;
+        }
+    }
+
     // REBOTES CONSECUTIVOS
 
     void sumar_velocidad()
     {
-        print("awa");
         rb.AddForce(rb.velocity*22);
         sumar_velocidad_bool = true;
     }

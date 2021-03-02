@@ -56,7 +56,7 @@ public class scr_menu : MonoBehaviour
             }
             else
             {
-                Destroy(transform.gameObject);
+                Destruir_Rebotador();
             }
             collision.gameObject.GetComponent<scr_player>().rebotes_consecutivos += 1;
             // aumento velocidad del player
@@ -75,14 +75,39 @@ public class scr_menu : MonoBehaviour
         {
             Controler_AS.PlayOneShot((AudioClip)Resources.Load("Sounds/pop_rebotador"));
             Instantiate(Resources.Load("Particle_Systems/Explosion_Rebotador"), transform.position, transform.rotation);
-            Destroy(this.gameObject);
-            
+            Destruir_Rebotador();
         }
         else
         {
             direcion += "infinito";
         }
         obj_numero.GetComponentInChildren<SpriteRenderer>().sprite = Resources.Load<Sprite>(direcion);
+    }
+
+
+    void Destruir_Rebotador()
+    {
+        Vector3 posicion = transform.position;
+        Destroy(transform.gameObject);
+
+        int a = UnityEngine.Random.Range(0, 99);
+
+    if (a < 20)
+        {
+            instanciar_nuevo_objeto(posicion);
+        }
+    }
+
+    void instanciar_nuevo_objeto(Vector3 pos)
+    {
+        int a = UnityEngine.Random.Range(0, 99);
+        if(a > 9)
+        {
+            Instantiate(Resources.Load("Prefabs/rebotador/Prefabs_Reb/circulo_instanciado"), pos , Quaternion.identity);
+        }
+        else {
+            Instantiate(Resources.Load("Prefabs/Obstaculos/pincho"), pos, Quaternion.identity);
+        }
     }
     
 }
